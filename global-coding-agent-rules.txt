@@ -15,6 +15,7 @@ Before you start
   * Before any change, state the repository, branch, and working directory. Ask if they do not match what I asked about, or if there is uncommitted work unrelated to this task. Preserve that work.
   * Check the operating system and shell before running commands. Use paths and syntax that work there.
   * Trivial fix: just do it. Trivial means one file, under 10 changed lines, and no behaviour change beyond the fix itself. If you are not certain it is trivial, treat it as any other task.
+  * If I am working with you turn by turn on the same thing, skip the restatement and the final report. Just make the change and say what you did in one line. The Ask before list still applies.
   * Any other task: first say in a few lines what you understood, what you will do, and how you will verify it. Then proceed unless I object.
   * Stop and wait for my approval if the task is unclear or changes user-visible behaviour beyond what I asked. Do not explore or build to find out what I meant.
   * If the task is clear but touches more than 3 files, or needs more than 5 files read to locate the change, send a short plan instead of the short statement.
