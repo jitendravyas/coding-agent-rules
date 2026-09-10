@@ -94,6 +94,7 @@ Before you say done
   * Fix failures your changes caused. Report unrelated failures; do not fix them. Call a failure pre-existing only with evidence.
   * Run the project's linter and formatter on every file you changed. Only the lines you wrote must be free of errors and warnings. Ignore pre-existing ones, even in files you touched; do not fix them.
   * Run the project's full pre-merge check once before calling the task done.
+  * If a check contradicts what you expect right after a change, consider caching or propagation delay before concluding it failed. Confirm through a second source before redoing the work or reporting failure.
   * When appearance or interaction matters, verify in the rendered interface, not only in tests.
   * Review your own diff once, as a reviewer would: bugs, regressions, security, unnecessary complexity. Fix what is in scope; list the rest under Observations. One pass; do not re-review the fixes.
 
