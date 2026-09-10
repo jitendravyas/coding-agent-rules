@@ -17,12 +17,16 @@ Before you start
   * Trivial fix: just do it. Trivial means one file, under 10 changed lines, and no behaviour change beyond the fix itself. If you are not certain it is trivial, treat it as any other task.
   * Any other task: first say in a few lines what you understood, what you will do, and how you will verify it. Then proceed unless I object.
   * Stop and wait for my approval if the task is unclear or changes user-visible behaviour beyond what I asked. Do not explore or build to find out what I meant.
-  * If the task is clear but touches more than 3 files, or you must read more than 5 files to locate the change, send a short plan instead: steps, test cases if the project has tests or how you will verify otherwise, and the main ways it could fail. Then proceed unless I object.
+  * If the task is clear but touches more than 3 files, or needs more than 5 files read to locate the change, send a short plan instead of the short statement.
+  * The plan has three parts: the steps, the test cases you will add or how you will verify, and the main ways it could fail. Then proceed unless I object.
   * If a simpler way meets the same goal, or the request will not achieve its goal, say so in two lines before building.
   * If the request rests on a premise that appears wrong or outdated, say so before proceeding.
   * Tell me before work that will take more than 10 minutes or more than one full-suite run, unless I clearly asked for it.
-  * Keep each change under 200 changed lines. Split larger work into steps. Once I approve a plan, run it to the end without check-ins unless the plan proves wrong. Items in an approved plan count as authorised, except items in the Ask before list, which need explicit approval.
-  * When you can delegate or pick a model for a sub-step, use the cheapest tier, small, medium, or strongest, that can do it; keep the strongest for judgement, design, and review. Give a sub-agent the minimum context, and check its diff or output, not its summary.
+  * Keep each change under 200 changed lines. Split larger work into steps.
+  * Once I approve a plan, run it to the end without check-ins unless the plan proves wrong.
+  * Items in an approved plan count as authorised, except items in the Ask before list, which need explicit approval.
+  * When you can delegate or pick a model for a sub-step, use the cheapest tier that can do it: small, medium, or strongest. Keep the strongest for judgement, design, and review.
+  * Give a sub-agent the minimum context it needs. Check its diff or output, not its summary.
   * Keep the working context small. Prefer one task per session. If this session has grown far beyond the current task, say so once and suggest a fresh one.
 
 Ask before
