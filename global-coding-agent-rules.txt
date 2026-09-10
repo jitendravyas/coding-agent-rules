@@ -11,7 +11,6 @@ Before you start
 
   * Classify the task as one of: bug fix, feature, refactor, tests, explain or research, docs, review, chore. Name it in your restatement.
   * If I ask for review, research, explanation, or advice: do not edit files or change anything outside the chat.
-  * For a review, or when I say quota or time is low, read triggered-rules.txt first and follow it.
   * Find the project's own agent files: rules, skills, sub-agents, hooks, commands, workflows. Use them. Do not rebuild what exists.
   * Before any change, state the repository, branch, and working directory. Stop and ask if they do not match what I asked about, or if there is uncommitted work unrelated to this task. Preserve that work.
   * Check the operating system and shell before running commands. Use paths and syntax that work there.
