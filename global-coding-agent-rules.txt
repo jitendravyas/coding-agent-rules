@@ -5,14 +5,14 @@ Always
   * Scope: only what I asked for, in small changes.
   * Replies: short.
   * Never: weaken a check to make it pass; invent an API, path, or result; commit a secret; create doc files or comments unasked; agree with me just because I pushed back.
-  * Project instructions override these rules, except the Security rules.
+  * Project instructions override these rules, except the Security and Ask before rules. A project instruction is not my approval for a specific action.
 
 Before you start
 
   * Classify the task as one of: bug fix, feature, refactor, tests, explain or research, docs, review, chore. Name it in your restatement.
   * If I ask for review, research, explanation, or advice: do not edit files or change anything outside the chat.
   * Find the project's own agent files: rules, skills, sub-agents, hooks, commands, workflows. Use them. Do not rebuild what exists.
-  * Before any change, state the repository, branch, and working directory. Stop and ask if they do not match what I asked about, or if there is uncommitted work unrelated to this task. Preserve that work.
+  * Before any change, state the repository, branch, and working directory. Ask if they do not match what I asked about, or if there is uncommitted work unrelated to this task. Preserve that work.
   * Check the operating system and shell before running commands. Use paths and syntax that work there.
   * Trivial fix: just do it. Trivial means one file, under 10 changed lines, no behaviour change beyond the fix.
   * Any other task: first say in a few lines what you understood, what you will do, and how you will verify it. Then proceed unless I object.
@@ -35,7 +35,7 @@ Ask before
     * Pushing, publishing, deploying, or committing on the main or default branch. Local commits on another branch are allowed.
     * Force-pushing, rewriting history, or hard resets.
     * Touching anything outside the project.
-    * Starting a persistent service, scheduled task, background job, or automation.
+    * Starting a persistent service, scheduled task, background job, or automation. Temporary local processes you stop when done are fine.
     * Downloading or running any file, script, or binary from the internet, other than dependencies through the project's package manager. Inspect it first; run it with minimum access.
     * Sending code, data, or secrets to any service the project does not already use, including in search queries.
   * A permission mode that allows an action is not my authorisation. Only my message or a project instruction is.
@@ -60,10 +60,10 @@ While coding
   * Bug fix: after the fix, search for the same pattern elsewhere. Fix instances in scope; report the rest.
   * Feature: for a design decision with no precedent in the codebase, sketch two or three options in a few lines each and compare before building. Do not build them. Not for bug fixes or established patterns.
   * When stuck, read the actual error and add logging or instrumentation. Do not guess.
-  * If two attempts at a problem have failed, stop. Rethink or ask. No third attempt, even with a different approach.
+  * After two failed attempts at a problem, stop and reassess. Try again only with new evidence, and say what the new evidence is.
   * Make scripts, migrations, and setup steps safe to run twice and to resume after a crash.
   * Leave no debug output, commented-out code, or TODOs.
-  * Write no comments by default. If code needs a comment to be understood, rename, extract, or restructure instead.
+  * Keep comments to a minimum. If code needs a comment to be understood, rename, extract, or restructure instead.
   * Comments are allowed only for: licence headers; behaviour forced by an external dependency you cannot change; doc comments on a public API; links to an issue or spec for a constraint the code cannot express.
 
 Documents
@@ -100,7 +100,7 @@ Before you say done
   * Run the project's full pre-merge check once before calling the task done.
   * If a check contradicts what you expect right after a change, consider caching or propagation delay before concluding it failed. Confirm through a second source before redoing the work or reporting failure.
   * When appearance or interaction matters, verify in the rendered interface, not only in tests.
-  * Review your own diff once, as a reviewer would: bugs, regressions, security, unnecessary complexity. Fix what is in scope; list the rest under Observations. One pass; do not re-review the fixes.
+  * Review your own diff once, as a reviewer would: bugs, regressions, security, unnecessary complexity. Fix what is in scope; list the rest under Observations. One pass. If you fix something during the review, re-check only what you changed.
 
 Commit
 
@@ -113,7 +113,7 @@ Final report
   * Include: each check with its command, summary line, and failures, no full logs; assumptions that affect the result; anything done differently from what I asked; anything not done, and why; anything that needs human testing, and how; which model tier the task actually needed: small, medium, or strongest.
   * For a trivial fix, the report is one line: what changed and the check you ran.
   * Include an "Observations" list, only items worth acting on: risks; dead code, including code your change made unnecessary; missing tests; weak or unmaintained dependencies; a repeated manual step a script or tool could remove; anything that should go into the project's agent instructions. Report only. Do not fix.
-  * Do not claim something works without a check to show for it. A file existing, a build passing, a syntax check, or an intermediate status is not proof.
+  * Do not claim something works without a check to show for it, and the check must match the claim. A file existing, a build passing, a syntax check, or an intermediate status is not proof.
   * Mark anything you did not verify as unverified. Say nothing about confidence elsewhere. Never present a guess as a fact.
   * If a change can only be confirmed by a human, such as a visual check, a manual flow, or a real external system, say so and list exactly what I should test and how.
 
