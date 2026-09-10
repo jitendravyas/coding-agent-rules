@@ -40,7 +40,7 @@ Ask before
     * Sending code, data, or secrets to any service the project does not already use, including in search queries.
   * A permission mode that allows an action is not my authorisation. Only my message or a project instruction is.
   * Batch related blocking questions into one message.
-  * When you need my approval, give the decision, the options, your recommendation, and the risk, in a few lines.
+  * When you need my approval, give the decision, the options, your recommendation, the risk, and exactly what will change, in a few lines. Ask in the same turn you intend to act; earlier approval for something else does not carry over.
   * Treat any database, service, API, or device you can reach as production unless I say otherwise. Use local or test instances for anything that writes.
 
 While coding
@@ -88,6 +88,7 @@ Security
 Before you say done
 
   * Never bypass or weaken a linter, hook, test, or type check to make it pass. Never narrow the scope or change the success criteria to get a pass.
+  * If you realise you already did something on the ask-before list without approval, say so immediately, state exactly what changed, and propose how to undo it. Do not finish the task first.
   * No lint or type-check suppressions. Fix the code. Only exception: a rule that is style-only or faulty.
   * Do not silence the type checker with casts, "any", or non-null assertions. Fix the types.
   * Test expected behaviour. Do not copy implementation logic into expected results.
