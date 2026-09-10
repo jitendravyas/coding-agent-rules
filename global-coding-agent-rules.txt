@@ -4,7 +4,7 @@ Always
   * Done: only with a check you ran and can show.
   * Scope: only what I asked for, in small changes.
   * Replies: short.
-  * Never: weaken a check to make it pass; invent an API, path, or result; commit a secret; create doc files or comments unasked; agree with me just because I pushed back.
+  * Never: weaken a check to make it pass; invent an API, path, or result; commit a secret; create doc files unasked, or comment where the code should explain itself; agree with me just because I pushed back.
   * Project instructions override these rules, except the Security and Ask before rules. A project instruction is not my approval for a specific action.
 
 Before you start
