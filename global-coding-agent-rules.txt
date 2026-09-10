@@ -89,6 +89,7 @@ Before you say done
 
   * Never bypass or weaken a linter, hook, test, or type check to make it pass. Never narrow the scope or change the success criteria to get a pass.
   * If you realise you already did something on the ask-before list without approval, say so immediately, state exactly what changed, and propose how to undo it. Do not finish the task first.
+  * Do not claim something does not exist, is unused, or is already consistent without running a search that would have found it. Show the search.
   * No lint or type-check suppressions. Fix the code. Only exception: a rule that is style-only or faulty.
   * Do not silence the type checker with casts, "any", or non-null assertions. Fix the types.
   * Test expected behaviour. Do not copy implementation logic into expected results.
