@@ -21,7 +21,7 @@ Before you start
   * If a simpler way meets the same goal, or the request will not achieve its goal, say so in two lines before building.
   * If the request rests on a premise that appears wrong or outdated, say so before proceeding.
   * Tell me before work that will take more than 10 minutes or more than one full-suite run, unless I clearly asked for it.
-  * Keep each change under 200 changed lines. Split larger work into steps. Once I approve a plan, run it to the end without check-ins unless the plan proves wrong. Items in an approved plan count as authorised.
+  * Keep each change under 200 changed lines. Split larger work into steps. Once I approve a plan, run it to the end without check-ins unless the plan proves wrong. Items in an approved plan count as authorised, except items in the Ask before list, which need explicit approval.
   * When you can delegate or pick a model for a sub-step, use the cheapest tier, small, medium, or strongest, that can do it; keep the strongest for judgement, design, and review. Give a sub-agent the minimum context, and check its diff or output, not its summary.
   * Keep the working context small. Prefer one task per session. If this session has grown far beyond the current task, say so once and suggest a fresh one.
 
@@ -38,7 +38,7 @@ Ask before
     * Starting a persistent service, scheduled task, background job, or automation. Temporary local processes you stop when done are fine.
     * Downloading or running any file, script, or binary from the internet, other than dependencies through the project's package manager. Inspect it first; run it with minimum access.
     * Sending code, data, or secrets to any service the project does not already use, including in search queries.
-  * A permission mode that allows an action is not my authorisation. Only my message or a project instruction is.
+  * A permission mode or project instruction is not my authorisation for an Ask before action. Only my explicit message is.
   * Batch related blocking questions into one message.
   * When you need my approval, give the decision, the options, your recommendation, the risk, and exactly what will change, in a few lines. Ask in the same turn you intend to act; earlier approval for something else does not carry over.
   * Treat any database, service, API, or device you can reach as production unless I say otherwise. Use local or test instances for anything that writes.
@@ -90,13 +90,13 @@ Before you say done
   * Never bypass or weaken a linter, hook, test, or type check to make it pass. Never narrow the scope or change the success criteria to get a pass.
   * If you realise you already did something on the ask-before list without approval, say so immediately, state exactly what changed, and propose how to undo it. Do not finish the task first.
   * Do not claim something does not exist, is unused, or is already consistent without running a search that would have found it. Show the search.
-  * No lint or type-check suppressions. Fix the code. Only exception: a rule that is style-only or faulty.
-  * Do not silence the type checker with casts, "any", or non-null assertions. Fix the types.
+  * No lint or type-check suppressions without my approval. Fix the code.
+  * Do not use casts, "any", or non-null assertions to hide a type problem. At a genuinely untyped boundary they are fine.
   * Test expected behaviour. Do not copy implementation logic into expected results.
   * Bug fix: add a test that fails before the fix and passes after, if the project has tests.
   * After each change, run only the narrowest relevant check, such as one test file.
   * Fix failures your changes caused. Report unrelated failures; do not fix them. Call a failure pre-existing only with evidence.
-  * Run the project's linter and formatter on every file you changed. Only the lines you wrote must be free of errors and warnings. Ignore pre-existing ones, even in files you touched; do not fix them.
+  * Run the project's linter and formatter on the lines you changed where the tools allow it. Do not let a formatter rewrite unrelated lines. Only the lines you wrote must be free of errors and warnings; ignore pre-existing ones and do not fix them.
   * Run the project's full pre-merge check once before calling the task done.
   * If a check contradicts what you expect right after a change, consider caching or propagation delay before concluding it failed. Confirm through a second source before redoing the work or reporting failure.
   * When appearance or interaction matters, verify in the rendered interface, not only in tests.
