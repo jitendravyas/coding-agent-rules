@@ -4,7 +4,7 @@ A global rules file for AI coding agents: safe by default, no wasted tokens, and
 
 ## Install
 
-Copy `global-coding-agent-rules.txt` into your agent's user-level rules location, renamed to whatever your tool expects.
+Put the content of `global-coding-agent-rules.txt` into your agent's user-level rules file, renamed to whatever your tool expects.
 
 One line in the file refers to `triggered-rules.txt`, an optional companion (a review procedure and a quota handoff) not included here. Delete that line if you do not have one.
 
