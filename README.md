@@ -2,23 +2,38 @@
 
 Agent-neutral, gender-neutral plain-text rules with Markdown headings for AI coding agents. The general coding instructions apply across software types; the browser-specific instructions apply only to browser-delivered work and its supporting web endpoints.
 
-## Install
+## How to use
 
-These `.txt` files are source files, not filenames that every agent loads automatically. To apply the rules across all projects, copy and paste `global-coding-agent-rules.txt` into the agent's user-level `AGENTS.md` (where supported) or its equivalent global rules file. Add `web-development-rules.txt` for browser-delivered work, using scoped loading when supported or manual inclusion for relevant sessions.
+The two `.txt` files are kept separate in this repository only for maintenance. They are source content: cloning the repository does **not** make an agent load them. Copy their contents into the instruction files or settings your coding agent actually uses; a web project's instructions can contain both in one file.
 
-To apply these rules only to one project, copy and paste the applicable content into that project's supported instruction file, such as its `AGENTS.md` or `CLAUDE.md`. Do not put project-only rules in a user-level file: user-level rules apply across projects. Keep the two source files separate for maintenance.
+- **Across projects:** copy [global-coding-agent-rules.txt](global-coding-agent-rules.txt) into your agent's user-level instructions. For each web project, also copy [web-development-rules.txt](web-development-rules.txt) into that project's instructions.
+- **For one project only:** copy the global rules and, for a web project, the web rules into its supported instruction file(s). Skip the user-level steps below. Non-web projects need only the global rules.
 
-If an agent accepts only one always-loaded instruction file, combine both only when browser guidance must be available automatically; retain the headings and browser-applicability condition. Recognition, loading, and scope depend on the agent and file location; use its documented mechanism and confirm the instructions are loaded.
+### In Cursor
 
-Preserve existing project instructions and resolve conflicts when merging. Avoid loading duplicate copies through global settings, project files, or imports. When both files are loaded, both occupy context even when the browser-specific section is inapplicable.
+1. Open **Customize → Rules → User Rules**. Paste in the contents of `global-coding-agent-rules.txt`. Cursor Agent (Chat) will use them across your projects.
+2. Open a web project, then use **Customize → Rules → Add Rule** to create a **Project Rule**. Set it to **Always Apply** and paste in the contents of `web-development-rules.txt`. Cursor saves project rules as `.mdc` files under `.cursor/rules/`.
+3. If that project already uses `AGENTS.md`, you can put the web rules there instead. Use one route, not both. For project-only adoption, put both files' contents in project rules or `AGENTS.md` and skip User Rules.
 
-## Maintaining these rules
+Cursor User Rules apply to Agent (Chat), not Inline Edit or Cursor Tab. See [Cursor's rules documentation](https://cursor.com/docs/rules).
 
-When revising instructions, merge duplicates and remove obsolete guidance rather than accumulating overlapping rules. Keep general policy in the global file and browser-specific behaviour in the web file; refer to shared policy instead of restating it. Check meaningful revisions on representative tasks with the agents and models the team actually uses, observing whether behaviour improves. Preserve explicit safety and approval boundaries even when one model usually follows them without a reminder. These checks guide rule maintenance, not every development task.
+### In Codex
 
-Keep file descriptions, installation details, and maintenance guidance here rather than in the loaded rules. Rules should give actionable instructions, not describe who does all the work or require a human-free workflow. Retain short applicability conditions where needed. Express general guidance in terms of capabilities and outcomes rather than a particular agent, model, operating system, shell, language, or framework. Keep project-specific commands, paths, conventions, and detailed procedures in project or nested instructions or relevant skills.
+1. Paste the global rules into your Codex home `AGENTS.md` (`~/.codex/AGENTS.md` by default). Codex loads it for every project.
+2. In each web project, add the web rules to that project's root `AGENTS.md`. If you skipped the user-level step, add the global rules there too. Merge them with any instructions already present.
+3. Start a new Codex session after changing instruction files. See [Codex's AGENTS.md guide](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
-Write rules as direct instructions. Put conditions next to the actions they govern, state exceptions explicitly, and use consistent terms. Prefer clear natural language over conversational phrasing, compressed shorthand, or model-specific prompting syntax. Preserve policy meaning when changing wording; clearer prose alone does not establish improved adherence across models.
+The two rule files together exceed Codex's default 32 KiB combined instruction-file limit. To load both completely, set `project_doc_max_bytes = 65536` in your Codex home `config.toml` (`~/.codex/config.toml` by default), or reduce the instructions you load. Check the limit again if the project has other instruction files.
+
+### In Claude Code
+
+1. Paste the global rules into your user-level `~/.claude/CLAUDE.md`.
+2. In each web project, add the web rules to its `CLAUDE.md` or `.claude/rules/web-development.md`. If you skipped the user-level step, add the global rules to project instructions too. Merge them with existing instructions instead of keeping duplicate copies.
+3. Run `/context` in a new Claude Code session to check which instruction files loaded. See [Claude Code's memory guide](https://code.claude.com/docs/en/memory).
+
+Claude Code can also read a project's `AGENTS.md` when no project `CLAUDE.md` or `CLAUDE.local.md` takes its place. Support varies by version; confirm with `/context` before relying on one project file across agents.
+
+For any other agent, use its documented instruction mechanism. Keep global and project-only rules in the right scope, and check that both files load where intended.
 
 ## Influences
 
