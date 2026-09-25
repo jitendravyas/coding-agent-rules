@@ -1,9 +1,16 @@
 # Coding agent rules
 
-These Markdown rules support everyday coding-agent work on new and existing software projects. The general baseline is platform- and tech-stack-neutral; the web and native Android files add platform-specific guidance without prescribing a coding agent, model, framework, or architecture. They aim to reduce repeated prompting and rework without mandating unnecessary checks. They are not general-purpose assistant instructions or a substitute for project-specific coding standards or specialist procedures.
+These Markdown rules support everyday coding-agent work on new and existing software projects. The general baseline is platform- and tech-stack-neutral; the web file adds browser-specific guidance without prescribing a coding agent, model, framework, or architecture. They aim to reduce repeated prompting and rework without mandating unnecessary checks. They are not general-purpose assistant instructions or a substitute for project-specific coding standards or specialist procedures.
+
+## Finalized baseline
 
 - [General software-project instructions](global-coding-agent-rules.md) cover task scope, approvals, research, implementation, security, verification, and communication across software projects.
 - [Browser-specific instructions](web-development-rules.md) cover browser behaviour, compatibility, web security, and rendered verification for browser-delivered work and its supporting web endpoints.
+
+## Work in progress
+
+These drafts are not part of the finalized baseline; review them before trial use.
+
 - [Android-specific instructions](android-development-rules.md) add a short set of checks for Android runtime compatibility, background execution, and the limits of emulator evidence. They are not a complete Android development guide.
 - [Agent workflow authoring](optional/agent-workflow-authoring-rules.md) is optional guidance for creating or changing agent rules, skills, subagents, or tool workflows. Add or load it only for those tasks, not in rules loaded for every task.
 
@@ -11,7 +18,7 @@ These Markdown rules support everyday coding-agent work on new and existing soft
 
 Cloning this repository does not activate the rules.
 
-1. **Choose the content.** For web projects, use the general and browser-specific files; for native Android apps, use the general and Android-specific files. In mixed projects, apply each platform's rules only to its relevant parts, including browser rules for embedded web content. Any baseline file can also be used independently, or you can copy selected sections. The files are separate for maintenance and are intended to work together in any order at the same instruction priority, separately or combined.
+1. **Choose the content.** Use the general file for software projects; for web projects, also use the browser-specific file. In mixed projects, apply browser rules only to browser-delivered content, including embedded web interfaces, and its supporting web endpoints. Either finalized file can also be used independently, or you can copy selected sections. These two files are separate for maintenance and are intended to work together in any order at the same instruction priority, separately or combined.
 2. **Choose where they apply.** Copy or adapt the baseline rules into your agent's supported project instruction file for one project, or its user-level instructions for use across projects. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup.
 3. **Merge and check.** Merge duplicate instructions and resolve conflicts with rules already in place. Keep each section's heading, scope conditions, and nested lists with its content when copying or reordering. Preserve attached safety and approval conditions. Use available loading diagnostics to confirm the complete content is loaded, not just that the file is recognised. Use project checks to enforce mechanical requirements.
 
@@ -22,12 +29,12 @@ For placement details, see the official instructions for [Cursor](https://cursor
 When adapting these rules, distinguish guidance needed across tasks from guidance needed only for a project or activity:
 
 - **Across tasks:** keep approval, privacy, work-preservation, verification, and communication boundaries in the instructions that are always loaded within your chosen scope.
-- **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. Scope web and Android guidance to the relevant projects or areas using your agent's supported loading controls, rather than loading every platform's rules for unrelated work.
+- **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. Scope platform-specific guidance to the relevant projects or areas using your agent's supported loading controls, rather than loading every platform's rules for unrelated work.
 - **For an occasional task:** keep specialist procedures, such as full accessibility audits, performance profiling, or authoring agent workflows, in a task-specific reference or skill. Load them when relevant; keep basic safeguards and checks for affected behaviour in the baseline.
 
 A conditional heading does not save context when the entire file is loaded. Do not move essential safety or approval boundaries solely into optional references.
 
-Rules and skills can overlap; a different file type does not justify repeating the same instruction. The Android file leaves skill-covered guidance to [official Android skills](https://developer.android.com/tools/agents/android-skills), including navigation, adaptive layouts, intent security, testing setup, and device-interaction procedures. Use relevant skills only when available and compatible with the project; otherwise consult official documentation. Using a skill does not authorise installations, upgrades, or unrelated changes.
+Rules and skills can overlap; a different file type does not justify repeating the same instruction. The Android draft leaves skill-covered guidance to [official Android skills](https://developer.android.com/tools/agents/android-skills), including navigation, adaptive layouts, intent security, testing setup, and device-interaction procedures. Use relevant skills only when available and compatible with the project; otherwise consult official documentation. Using a skill does not authorise installations, upgrades, or unrelated changes.
 
 ## Contributing
 
