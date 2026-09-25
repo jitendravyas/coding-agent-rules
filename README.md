@@ -1,21 +1,33 @@
 # Coding agent rules
 
-These Markdown rules support everyday coding-agent work on new and existing software projects. The general baseline is platform- and tech-stack-neutral; the web file adds browser-specific guidance without prescribing a coding agent, model, framework, or architecture. They aim to reduce repeated prompting and rework without mandating unnecessary checks. They are not general-purpose assistant instructions or a substitute for project-specific coding standards or specialist procedures.
+Reusable instructions you can copy into your coding agent for everyday software development. They aim to reduce repeated prompting, avoidable mistakes, and time and tokens spent on rework.
 
-## Rule files
+Think of them as a reset for coding agents: safe defaults for doing the requested work, while your project still chooses its stack, architecture, conventions, and testing approach. They are written without depending on a particular coding agent or LLM model.
 
-- [General software-project instructions](global-coding-agent-rules.md) cover task scope, approvals, research, implementation, security, verification, and communication across software projects.
-- [Browser-specific instructions](web-development-rules.md) cover browser behaviour, compatibility, web security, and rendered verification for browser-delivered work and its supporting web endpoints.
+## Choose your rules
+
+### [global-coding-agent-rules.md](global-coding-agent-rules.md)
+
+Start here for any kind of software development project: websites, backend services, native applications, libraries, or command-line tools. Use it when starting a project or working in an established codebase.
+
+It guides everyday work beyond writing code, including documentation, project research, tooling, and version control. The instructions ask the agent to stay within scope, protect existing work and sensitive data, get required approvals, check version-specific information, verify results, and explain blockers and next steps clearly.
+
+### [web-development-rules.md](web-development-rules.md)
+
+Add this for website and web application development, whether you work on a single HTML/CSS page, a server-rendered website, a multi-page application, or a JavaScript-rendered single-page application.
+
+It adds web development defaults for native browser behaviour, layouts, accessibility, compatibility, web security, and testing the actual rendered result. It applies to web content and its supporting endpoints, including web interfaces embedded in native applications, without requiring a particular framework or rendering architecture.
+
+**For web projects, start with both files.** They are kept separate for maintenance. You can also use either file independently or take only the sections that help your workflow. Neither file replaces project-specific coding standards or specialist procedures; their scope is software-project work, not general-purpose assistant use.
 
 Rules for additional operating systems and application runtime environments are planned.
 
 ## How to use
 
-Cloning this repository does not activate the rules.
-
-1. **Choose the content.** Use the general file for software projects; for web projects, also use the browser-specific file. In mixed projects, apply browser rules only to browser-delivered content, including embedded web interfaces, and its supporting web endpoints. Either file can also be used independently, or you can copy selected sections. These two files are separate for maintenance and are intended to work together in any order at the same instruction priority, separately or combined.
-2. **Choose where they apply.** Copy or adapt the baseline rules into your agent's supported project instruction file for one project, or its user-level instructions for use across projects. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup.
-3. **Merge and check.** Merge duplicate instructions and resolve conflicts with rules already in place. Keep each section's heading, scope conditions, and nested lists with its content when copying or reordering. Preserve attached safety and approval conditions. Use available loading diagnostics to confirm the complete content is loaded, not just that the file is recognised. Use project checks to enforce mechanical requirements.
+1. **Choose where to use them.** Add them to your agent's user-level instructions for use across projects, or to a project's instruction file for that project only. "Global" describes the file's broad applicability; it does not require loading it for every project. For teams, keep shared instructions in version control so developers can use the same rules.
+2. **Copy the content into instructions your agent reads.** For example, use an existing `AGENTS.md` or `CLAUDE.md` if your agent supports it, or its rules settings. You can combine both files or configure them separately; they are intended to work together in either order at the same instruction priority. Keep headings, scope conditions, nested lists, and attached safety and approval conditions with the content.
+3. **Merge with your existing rules.** Remove duplicates and resolve conflicts while preserving project requirements and safety boundaries. In mixed projects, apply the web rules only to web content and its supporting endpoints.
+4. **Confirm the rules are loaded, then try them on a task.** Use your agent's available loading diagnostics to check that the complete content is included. Cloning this repository or copying these files into an arbitrary folder does not activate them. Adjust the selection if a rule adds friction without helping your work; use project checks to enforce mechanical requirements.
 
 For placement details, see the official instructions for [Cursor](https://cursor.com/docs/rules), [Codex](https://developers.openai.com/codex/guides/agents-md), [Claude Code](https://code.claude.com/docs/en/memory), or your chosen agent.
 
@@ -24,7 +36,7 @@ For placement details, see the official instructions for [Cursor](https://cursor
 When adapting these rules, distinguish guidance needed across tasks from guidance needed only for a project or activity:
 
 - **Across tasks:** keep approval, privacy, work-preservation, verification, and communication boundaries in the instructions that are always loaded within your chosen scope.
-- **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. Scope browser-specific guidance to web projects or browser-related areas of mixed projects using your agent's supported loading controls.
+- **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. Scope web development guidance to web projects or web-related areas of mixed projects using your agent's supported loading controls.
 - **For an occasional task:** keep specialist procedures, such as full accessibility audits or performance profiling, in a task-specific reference or skill. Load them when relevant; keep basic safeguards and checks for affected behaviour in the baseline.
 
 A conditional heading does not save context when the entire file is loaded. Do not move essential safety or approval boundaries solely into optional references.
@@ -33,7 +45,7 @@ Rules and skills can overlap; a different file type does not justify repeating t
 
 ## Contributing
 
-Issues and pull requests are welcome. Explain the problem your suggestion solves and whether it belongs in the general baseline, browser-specific guidance, or project instructions.
+Issues and pull requests are welcome, including feedback from trying the rules in your own projects. Explain the problem your suggestion solves and whether it belongs in the global rules, web development rules, or project instructions.
 
 ## Influences
 
