@@ -9,9 +9,9 @@ These Markdown rules help coding agents work on new and existing software projec
 
 Cloning this repository does not activate the rules.
 
-1. **Choose the files.** Use the general rules for software work. For browser-delivered work, use both files. They are separate here for maintenance and can be combined in one instruction file.
+1. **Choose the content.** Use the complete files or copy only the sections relevant to your needs: general rules for software work, plus web rules for browser-delivered work. The files are separate here for maintenance and can be combined in one instruction file.
 2. **Choose where they apply.** Copy or adapt the rules into project instructions for one project, or your agent's user-level instructions for use across projects. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup.
-3. **Merge and check.** Merge duplicate instructions and resolve conflicts with rules already in place. Confirm each agent loads the instructions; use project checks to enforce mechanical requirements.
+3. **Merge and check.** Merge duplicate instructions and resolve conflicts with rules already in place. Preserve any safety or approval conditions attached to the guidance you copy. Confirm each agent loads the instructions; use project checks to enforce mechanical requirements.
 
 For placement details, see the official instructions for [Cursor](https://cursor.com/docs/rules), [Codex](https://developers.openai.com/codex/guides/agents-md), [Claude Code](https://code.claude.com/docs/en/memory), or your chosen agent.
 
