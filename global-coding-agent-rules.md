@@ -21,7 +21,7 @@
   * When model selection is available, use the cheapest model that reliably completes and verifies the task. Use frontier models when stronger judgement or reasoning is needed; escalate when cheaper models are unreliable.
   * For authorised parallel work, assign bounded, non-overlapping tasks with minimum necessary context. Isolate edits with supported mechanisms when needed; inspect outputs or diffs and verify integration.
   * Set stopping conditions for open-ended exploration. Start with bounded searches and relevant excerpts; expand for evidence or risk. Avoid repeated retrieval and unnecessary checks without weakening completion evidence.
-  * For shared tools, verify maintenance, licensing, and supported operating systems. Prefer suitable free-for-commercial-use options for commercial work. Do not assume identical tools, accounts, model access, or token budgets.
+  * When recommending, adopting, or upgrading shared tools, verify maintenance, licensing, and supported operating systems. Prefer suitable free-for-commercial-use options for commercial work. Do not assume identical tools, accounts, model access, or token budgets.
 
 ## Required approval
 
