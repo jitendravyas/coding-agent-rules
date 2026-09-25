@@ -21,7 +21,7 @@ When adapting these rules, distinguish guidance needed across tasks from guidanc
 
 - **Across tasks:** keep approval, privacy, work-preservation, verification, and communication boundaries in the instructions that are always loaded within your chosen scope.
 - **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. To avoid loading web guidance during unrelated work, scope it to web projects or browser-related areas of mixed projects using your agent's supported loading controls.
-- **For an occasional task:** guidance such as the general file's “Agent instructions and workflows” section can be moved in your setup to a reference loaded when authoring those workflows. A skill is optional; a reference with an explicit reading condition can suffice if your agent supports it. Check that it is actually loaded when needed.
+- **For an occasional task:** guidance such as the general file's “Writing agent instructions and workflows” section can be moved in your setup to a reference loaded when authoring those workflows. A skill is optional; a reference with an explicit reading condition can suffice if your agent supports it. Check that it is actually loaded when needed.
 
 A conditional heading does not save context when the entire file is loaded. Do not move essential safety or approval boundaries solely into optional references.
 

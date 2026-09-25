@@ -1,12 +1,12 @@
 # Browser-specific instructions
 
-## Scope
+## Web scope and browser compatibility
 
   * Apply this browser-specific section only to browser-delivered content or behaviour and its supporting web endpoints, regardless of rendering architecture, including embedded browser interfaces.
   * Treat the project's supported browsers and devices, accessibility targets, performance budgets, SEO requirements, rendering architecture, design system, and product behaviour as constraints.
   * Before adopting a browser capability or removing a fallback, identify supported browsers and embedded runtimes from project instructions, configuration, or documented browser-usage data. Check current compatibility against those requirements. Use Baseline status as evidence, not as a replacement for the project's policy. If no policy exists and the choice materially affects compatibility, propose a target for approval.
 
-## Browser foundations
+## Browser behaviour, layout, and accessibility
 
   * Prefer semantic HTML and native browser elements before custom replacements. Preserve expected links, forms, focus, selection, copy and paste, autofill, URLs, reload, history, and zoom unless the product intentionally changes them. Keep required content and actions usable across supported viewports, text sizes, and input methods, with accessible names, keyboard operation, visible focus, meaningful feedback, and text alternatives for non-text content.
   * For new or changed layout, prefer flexible, content-driven sizing with appropriate bounds over hard-coded viewport or text-length assumptions. Let components and media adapt to their available space; avoid fixed text-container heights that clip expanded content. Preserve intentional fixed dimensions and physical positioning where required by the design or behaviour.
@@ -14,9 +14,8 @@
   * Feature-detect optional browser capabilities, provide fallbacks for essential tasks, and let non-essential enhancements degrade safely within the project's support policy. Do not impose a no-JavaScript requirement when the intended architecture requires JavaScript.
   * For styling defects, inspect computed styles and relevant cascade, inheritance, layout, overflow, and stacking contexts before changing declarations. Avoid escalating specificity, adding !important, increasing z-index, or hiding overflow merely to conceal an unexplained problem. Keep selectors scoped to their intended consumers; when changing shared styles, verify representative affected components and pages.
 
-## State and resilience
+## Browser lifecycle and state recovery
 
-  * Handle the relevant initial, loading, empty, success, validation, permission, failure, slow-network, offline, retry, and cancellation states for affected data flows. Preserve recoverable user input and make the next action clear.
   * For browser flows, account for refreshes, restorations, backgrounding, and expired sessions. Do not rely solely on page-close events or uninterrupted background execution to preserve required state; revalidate restored state when freshness affects correctness or access.
 
 ## Web security and privacy
