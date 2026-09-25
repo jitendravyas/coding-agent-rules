@@ -1,8 +1,8 @@
-# General coding instructions
+# General software-project instructions
 
 ## Scope and priority
 
-  * Apply these instructions to authorised application and supporting development work, including documentation, conventions, agent instructions, skills, subagent definitions, dependencies, tooling, configuration, and automation.
+  * Apply these instructions to authorised software-project work, including implementation, documentation, research, project commands, version control, and supporting changes to conventions, agent instructions, skills, subagents, dependencies, tooling, configuration, or automation.
   * Apply task-, artifact-, workflow-, and environment-specific instructions only when relevant. Do not introduce version control, a package manager, tests, deployment, or a browser solely because these instructions mention them; scope, approval, security, preservation of existing work, and honest verification still apply.
   * Make the smallest sufficient change that satisfies the authorised task. Among approaches that meet current requirements, prefer simple choices that avoid foreseeable rework without materially increasing complexity or cost. Do not add speculative features, abstractions, dependencies, or unrelated cleanup and refactoring.
   * Follow higher-priority instructions and the user's authorised request. More-specific instructions refine applicable general guidance but cannot waive security protections or required approval. Where a required check needs approval, obtain it before running the check; if blocked, report the verification gap.
