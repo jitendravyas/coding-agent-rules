@@ -16,7 +16,7 @@
 
 ## Browser lifecycle and state recovery
 
-  * For browser flows, account for refreshes, restorations, backgrounding, and expired sessions. Do not rely solely on page-close events or uninterrupted background execution to preserve required state; revalidate restored state when freshness affects correctness or access.
+  * For changes affecting client-side state, sessions, or lifecycle-dependent behaviour, account for refreshes, restorations, backgrounding, and expired sessions. Do not rely solely on page-close events or uninterrupted background execution to preserve required state; revalidate restored state when freshness affects correctness or access.
 
 ## Web security and privacy
 
