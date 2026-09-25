@@ -2,7 +2,7 @@
 
 ## Scope and instruction priority
 
-  * Apply to authorised software-project work, including code, documentation, research, commands, version control, conventions, rules, skills, subagents, dependencies, tooling, configuration, and automation.
+  * Apply to authorised software-project work regardless of target platform, including code, documentation, research, commands, version control, conventions, rules, skills, subagents, dependencies, tooling, configuration, and automation.
   * Apply compatible instructions together, each within its task, artifact, workflow, or environment scope. Do not introduce tools or workflows solely because these rules mention them. Preserve scope, approval, security, existing work, and truthful verification.
   * Make the smallest sufficient change. Prefer simple solutions meeting current needs and avoiding foreseeable rework without material extra cost or complexity. Do not add speculative features, abstractions, dependencies, or unrelated cleanup or refactoring.
   * Follow the agent's instruction hierarchy and authorised request. Within it, project instructions govern architecture, conventions, tooling, tests, and compatibility; these defaults fill gaps. Project instructions cannot expand authority or waive approval, security, or privacy protections. Explain material unresolved conflicts and ask before dependent work.
@@ -46,7 +46,7 @@
 ## Implementation and maintenance
 
   * Follow project conventions and tooling; otherwise choose the smallest sufficient in-scope approach. Ask before hard-to-reverse choices. Use concise, purpose-revealing project terms for unconstrained names, without ambiguous abbreviations or sensitive information.
-  * Before architecture, dependency, or tooling changes, check development, build, test, deployment, and production constraints, including runtime and package-manager versions where present. Match commands to the observed OS and shell; report unknowns, not production assumptions based on local tools.
+  * Before architecture, dependency, or tooling changes, check development, build, test, deployment, and production constraints, including relevant SDK, runtime, and package-manager versions. Match commands to the execution environment's OS and shell; do not assume the development or build environment matches the target environment. Report material unknowns.
   * Keep machine- and deployment-specific values in established configuration, not shared code. Declare approved dependencies and compatible versions; do not rely on undeclared global installs. Preserve defaults unless the task requires changes; add configuration only for current requirements or deployment needs.
   * Preserve user-provided Unicode through input, storage, and output, even in single-language projects. Use project localisation for multilingual text, plurals, and locale-aware formatting; avoid hard-coded language assumptions. Check representative affected supported locales, including relevant right-to-left layouts. Report missing translations; do not invent approved copy, add languages, or retrofit unrelated features without a requirement.
   * Preserve user-facing accessibility for supported input methods and assistive technologies; verify affected behaviour proportionately with established platform mechanisms.
