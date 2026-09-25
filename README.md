@@ -1,15 +1,19 @@
 # Coding agent rules
 
-These Markdown rules help coding agents work on software projects without assuming a particular agent, model, operating system, or tech stack. They aim to reduce repeated prompting and rework without mandating unnecessary checks. They are not general-purpose assistant instructions or a substitute for project-specific coding standards.
+These Markdown rules help coding agents work on new and existing software projects without assuming a particular agent, model, operating system, or tech stack. They aim to reduce repeated prompting and rework without mandating unnecessary checks. They are not general-purpose assistant instructions or a substitute for project-specific coding standards.
 
 - [General software-project instructions](global-coding-agent-rules.md) cover task scope, approvals, research, implementation, security, verification, and communication across software projects.
 - [Browser-specific instructions](web-development-rules.md) add browser behaviour, compatibility, web security, and rendered verification for browser-delivered work and its supporting web endpoints.
 
 ## How to use
 
-Copy or adapt the relevant rules into your agent's user-level or project instructions; cloning this repository does not load them. Use the general rules for software work, and add the browser-specific rules where applicable. The files are separate here for maintenance and can be combined in one instruction file.
+Cloning this repository does not activate the rules.
 
-Merge duplicate instructions and resolve conflicts with rules already in place. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup. Confirm each agent loads the project instructions; use project checks to enforce mechanical requirements. If you do not want browser guidance loaded during unrelated work, add it only to web projects. For placement details, see the official instructions for [Cursor](https://cursor.com/docs/rules), [Codex](https://developers.openai.com/codex/guides/agents-md), [Claude Code](https://code.claude.com/docs/en/memory), or your chosen agent.
+1. **Choose the files.** Use the general rules for software work. For browser-delivered work, use both files. They are separate here for maintenance and can be combined in one instruction file.
+2. **Choose where they apply.** Copy or adapt the rules into project instructions for one project, or your agent's user-level instructions for use across projects. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup. If you do not want browser guidance loaded during unrelated work, add it only to web projects.
+3. **Merge and check.** Merge duplicate instructions and resolve conflicts with rules already in place. Confirm each agent loads the instructions; use project checks to enforce mechanical requirements.
+
+For placement details, see the official instructions for [Cursor](https://cursor.com/docs/rules), [Codex](https://developers.openai.com/codex/guides/agents-md), [Claude Code](https://code.claude.com/docs/en/memory), or your chosen agent.
 
 ## Contributing
 
@@ -29,4 +33,4 @@ These rules mainly reflect practical experience with coding agents. The sources 
 
 ## Licence
 
-MIT. See `LICENSE`.
+Licensed under [MIT](LICENSE). When copying these rules or substantial portions of them, retain the copyright and permission notice from the licence.
