@@ -10,10 +10,20 @@ These Markdown rules help coding agents work on new and existing software projec
 Cloning this repository does not activate the rules.
 
 1. **Choose the files.** Use the general rules for software work. For browser-delivered work, use both files. They are separate here for maintenance and can be combined in one instruction file.
-2. **Choose where they apply.** Copy or adapt the rules into project instructions for one project, or your agent's user-level instructions for use across projects. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup. If you do not want browser guidance loaded during unrelated work, add it only to web projects.
+2. **Choose where they apply.** Copy or adapt the rules into project instructions for one project, or your agent's user-level instructions for use across projects. For teams, keep the shared baseline in version-controlled project instructions rather than relying on each developer's user-level setup.
 3. **Merge and check.** Merge duplicate instructions and resolve conflicts with rules already in place. Confirm each agent loads the instructions; use project checks to enforce mechanical requirements.
 
 For placement details, see the official instructions for [Cursor](https://cursor.com/docs/rules), [Codex](https://developers.openai.com/codex/guides/agents-md), [Claude Code](https://code.claude.com/docs/en/memory), or your chosen agent.
+
+### Keep context relevant
+
+When adapting these rules, distinguish guidance needed across tasks from guidance needed only for a project or activity:
+
+- **Across tasks:** keep approval, privacy, work-preservation, verification, and communication boundaries in the instructions that are always loaded within your chosen scope.
+- **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. To avoid loading web guidance during unrelated work, scope it to web projects or browser-related areas of mixed projects using your agent's supported loading controls.
+- **For an occasional task:** guidance such as the general file's “Agent instructions and workflows” section can be moved in your setup to a reference loaded when authoring those workflows. A skill is optional; a reference with an explicit reading condition can suffice if your agent supports it. Check that it is actually loaded when needed.
+
+A conditional heading does not save context when the entire file is loaded. Do not move essential safety or approval boundaries solely into optional references.
 
 ## Contributing
 
