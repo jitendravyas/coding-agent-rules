@@ -1,39 +1,44 @@
 # Coding agent rules
 
-Agent-neutral, gender-neutral plain-text rules with Markdown headings for AI coding agents. The general coding instructions apply across software types; the browser-specific instructions apply only to browser-delivered work and its supporting web endpoints.
+Agent-neutral, gender-neutral Markdown rules for AI coding agents working on software development projects and related development tasks. They are not general-purpose assistant instructions. The general coding instructions apply across software types; the browser-specific instructions apply only to browser-delivered work and its supporting web endpoints.
 
 ## How to use
 
-The two `.txt` files are kept separate in this repository only for maintenance. They are source content: cloning the repository does **not** make an agent load them. Copy their contents into the instruction files or settings your coding agent actually uses; a web project's instructions can contain both in one file.
+The two `.md` files are kept separate in this repository only for maintenance. They are source content: cloning the repository does **not** make an agent load them. Copy their contents into the instruction files or settings your coding agent actually uses. A web project's instructions can contain both in one file.
 
-- **Across projects:** copy [global-coding-agent-rules.txt](global-coding-agent-rules.txt) into your agent's user-level instructions. For each web project, also copy [web-development-rules.txt](web-development-rules.txt) into that project's instructions.
-- **For one project only:** copy the global rules and, for a web project, the web rules into its supported instruction file(s). Skip the user-level steps below. Non-web projects need only the global rules.
+Choose the scope that suits you:
+
+- **User-level rules:** copy [global-coding-agent-rules.md](global-coding-agent-rules.md) and, if you want web guidance available across projects, [web-development-rules.md](web-development-rules.md) into your agent's user-level instructions.
+- **Project-specific rules:** copy the global rules into each chosen project's instructions, adding the web rules for web projects.
+- **A mix:** keep the global rules at user level and add the web rules only to selected projects. Avoid loading the same rules twice.
+
+User-level rules load more broadly, including when the agent handles non-development work. The scope statements inside the files still limit when their instructions apply.
 
 ### In Cursor
 
-1. Open **Customize → Rules → User Rules**. Paste in the contents of `global-coding-agent-rules.txt`. Cursor Agent (Chat) will use them across your projects.
-2. Open a web project, then use **Customize → Rules → Add Rule** to create a **Project Rule**. Set it to **Always Apply** and paste in the contents of `web-development-rules.txt`. Cursor saves project rules as `.mdc` files under `.cursor/rules/`.
-3. If that project already uses `AGENTS.md`, you can put the web rules there instead. Use one route, not both. For project-only adoption, put both files' contents in project rules or `AGENTS.md` and skip User Rules.
+1. For user-level use, open **Customize → Rules → User Rules** and paste the contents of the file(s) you want available across projects. Cursor Agent (Chat) will use them across your projects.
+2. For project-specific use, open the project and use **Customize → Rules → Add Rule** to create a **Project Rule**. Set it to **Always Apply** and paste in the rules that project needs but does not already get at user level: the global rules and, for a web project, the web rules. Cursor saves project rules as `.mdc` files under `.cursor/rules/`.
+3. If the project already uses `AGENTS.md`, you can put its rules there instead. Use one route for each set of rules, not both.
 
 Cursor User Rules apply to Agent (Chat), not Inline Edit or Cursor Tab. See [Cursor's rules documentation](https://cursor.com/docs/rules).
 
 ### In Codex
 
-1. Paste the global rules into your Codex home `AGENTS.md` (`~/.codex/AGENTS.md` by default). Codex loads it for every project.
-2. In each web project, add the web rules to that project's root `AGENTS.md`. If you skipped the user-level step, add the global rules there too. Merge them with any instructions already present.
+1. For user-level use, paste the contents of the file(s) you want available across projects into your Codex home `AGENTS.md` (`~/.codex/AGENTS.md` by default). Codex loads it for every project.
+2. For project-specific use, add the rules the project needs but does not already get at user level to its root `AGENTS.md`: the global rules and, for a web project, the web rules. Merge them with any instructions already present.
 3. Start a new Codex session after changing instruction files. See [Codex's AGENTS.md guide](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
 The two rule files together exceed Codex's default 32 KiB combined instruction-file limit. To load both completely, set `project_doc_max_bytes = 65536` in your Codex home `config.toml` (`~/.codex/config.toml` by default), or reduce the instructions you load. Check the limit again if the project has other instruction files.
 
 ### In Claude Code
 
-1. Paste the global rules into your user-level `~/.claude/CLAUDE.md`.
-2. In each web project, add the web rules to its `CLAUDE.md` or `.claude/rules/web-development.md`. If you skipped the user-level step, add the global rules to project instructions too. Merge them with existing instructions instead of keeping duplicate copies.
+1. For user-level use, paste the contents of the file(s) you want available across projects into `~/.claude/CLAUDE.md`.
+2. For project-specific use, add the rules the project needs but does not already get at user level to its `CLAUDE.md` or `.claude/rules/`: the global rules and, for a web project, the web rules. Merge them with existing instructions.
 3. Run `/context` in a new Claude Code session to check which instruction files loaded. See [Claude Code's memory guide](https://code.claude.com/docs/en/memory).
 
 Claude Code can also read a project's `AGENTS.md` when no project `CLAUDE.md` or `CLAUDE.local.md` takes its place. Support varies by version; confirm with `/context` before relying on one project file across agents.
 
-For any other agent, use its documented instruction mechanism. Keep global and project-only rules in the right scope, and check that both files load where intended.
+For any other agent, use its documented instruction mechanism. Choose user-level or project-specific placement for each file, and check that the intended rules load.
 
 ## Influences
 
