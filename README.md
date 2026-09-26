@@ -26,6 +26,22 @@ Rules for additional operating systems and application runtime environments are 
 
 ## How to use
 
+```text
+Software project
+    |
+    v
+global-coding-agent-rules.md
+    |
+    +-- Browser-delivered work? -- yes --> also add web-development-rules.md
+    |                             no  --> use global rules alone
+    |
+    v
+Add the selected rules to user-level or project-level agent instructions
+    |
+    v
+Merge overlaps -> confirm loading -> try a task
+```
+
 1. **Choose where to use them.** Add them to your agent's user-level instructions for use across projects, or to a project's instruction file for that project only. "Global" describes the file's broad applicability; it does not require loading it for every project. For teams, keep shared instructions in version control so developers can use the same rules.
 2. **Copy the content into instructions your agent reads.** For web development, copy the contents of both files into a single supported rules file, such as `AGENTS.md` or `CLAUDE.md`, or load both separately through your agent's rules settings. They are intended to work together in either order at the same instruction priority. Keep headings, scope conditions, nested lists, and attached safety and approval conditions with the content.
 3. **Merge with your existing rules.** Remove duplicates and resolve conflicts while preserving project requirements and safety boundaries. In mixed projects, apply the web rules only to web content and its supporting endpoints.
