@@ -18,7 +18,7 @@ Add this for website and web application development, whether you work on a sing
 
 It adds web development defaults for native browser behaviour, layouts, accessibility, compatibility, web security, and testing the actual rendered result. It applies to web content and its supporting endpoints, including web interfaces embedded in native applications, without requiring a particular framework or rendering architecture.
 
-**For web projects, use both `global-coding-agent-rules.md` and `web-development-rules.md` together.** The web rules add to the global rules rather than replace them. The files are separate only for maintenance; your agent does not need to keep them separate.
+**For web projects, use both `global-coding-agent-rules.md` and `web-development-rules.md` together.** Copy the contents of both into one agent instruction file. The web rules add to the global rules; the source files stay separate here only for maintenance.
 
 You can still adapt or take selected sections to suit your workflow. Neither file replaces project-specific coding standards or specialist procedures; their scope is software-project work, not general-purpose assistant use.
 
@@ -27,23 +27,18 @@ Rules for additional operating systems and application runtime environments are 
 ## How to use
 
 ```text
-Software project
-    |
-    v
-global-coding-agent-rules.md
-    |
-    +-- Browser-delivered work? -- yes --> also add web-development-rules.md
-    |                             no  --> use global rules alone
-    |
-    v
-Add the selected rules to user-level or project-level agent instructions
-    |
-    v
-Merge overlaps -> confirm loading -> try a task
+Non-web project:
+  global-coding-agent-rules.md ------------------> one agent instruction file
+
+Web project:
+  global-coding-agent-rules.md ----+
+                                   +---------------> one agent instruction file
+  web-development-rules.md --------+                  (AGENTS.md, CLAUDE.md,
+                                                      or a Cursor rule)
 ```
 
 1. **Choose where to use them.** Add them to your agent's user-level instructions for use across projects, or to a project's instruction file for that project only. "Global" describes the file's broad applicability; it does not require loading it for every project. For teams, keep shared instructions in version control so developers can use the same rules.
-2. **Copy the content into instructions your agent reads.** For web development, copy the contents of both files into a single supported rules file, such as `AGENTS.md` or `CLAUDE.md`, or load both separately through your agent's rules settings. They are intended to work together in either order at the same instruction priority. Keep headings, scope conditions, nested lists, and attached safety and approval conditions with the content.
+2. **Copy the content into one instruction file your agent reads.** This could be `AGENTS.md`, `CLAUDE.md`, or a Cursor rule. For a web project, paste the contents of both source files into that same file, in either order. Keep headings, scope conditions, nested lists, and attached safety and approval conditions with the content.
 3. **Merge with your existing rules.** Remove duplicates and resolve conflicts while preserving project requirements and safety boundaries. In mixed projects, apply the web rules only to web content and its supporting endpoints.
 4. **Confirm the rules are loaded, then try them on a task.** Use your agent's available loading diagnostics to check that the complete content is included. Cloning this repository or copying these files into an arbitrary folder does not activate them. Adjust the selection if a rule adds friction without helping your work; use project checks to enforce mechanical requirements.
 
