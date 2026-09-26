@@ -6,7 +6,7 @@ Think of them as a reset for coding agents: safe defaults for doing the requeste
 
 ## Choose your rules
 
-### [global-coding-agent-rules.md](global-coding-agent-rules.md)
+### [coding-agent-global-rules.md](coding-agent-global-rules.md)
 
 Start here for any kind of software development project: websites, backend services, native applications, libraries, or command-line tools. Use it when starting a project or working in an established codebase.
 
@@ -18,7 +18,7 @@ Add this for website and web application development, whether you work on a sing
 
 It adds web development defaults for native browser behaviour, layouts, accessibility, compatibility, web security, and testing the actual rendered result. It applies to web content and its supporting endpoints, including web interfaces embedded in native applications, without requiring a particular framework or rendering architecture.
 
-**For web projects, use both `global-coding-agent-rules.md` and `web-development-rules.md` together.** Copy the contents of both into one agent instruction file. The web rules add to the global rules; the source files stay separate here only for maintenance.
+**For web projects, use both `coding-agent-global-rules.md` and `web-development-rules.md` together.** Copy the contents of both into one agent instruction file. The web rules add to the global rules; the source files stay separate here only for maintenance.
 
 You can still adapt or take selected sections to suit your workflow. Neither file replaces project-specific coding standards or specialist procedures; their scope is software-project work, not general-purpose assistant use.
 
@@ -28,16 +28,16 @@ Rules for additional operating systems and application runtime environments are 
 
 ```text
 Non-web project:
-  global-coding-agent-rules.md ------------------> one agent instruction file
+  coding-agent-global-rules.md ------------------> one agent instruction file
 
 Web project:
-  global-coding-agent-rules.md ----+
+  coding-agent-global-rules.md ----+
                                    +---------------> one agent instruction file
   web-development-rules.md --------+                  (AGENTS.md, CLAUDE.md,
                                                       or a Cursor rule)
 ```
 
-1. **Choose where to use them.** Add them to your agent's user-level instructions for use across projects, or to a project's instruction file for that project only. "Global" describes the file's broad applicability; it does not require loading it for every project. For teams, keep shared instructions in version control so developers can use the same rules.
+1. **Choose where to use them.** Add them to your agent's user-level instructions for use across software projects, or to a project's instruction file for that project only. Here, "global" means reusable across software projects, not every task the agent handles. For teams, keep shared instructions in version control so developers can use the same rules.
 2. **Copy the content into one instruction file your agent reads.** This could be `AGENTS.md`, `CLAUDE.md`, or a Cursor rule. For a web project, paste the contents of both source files into that same file, in either order. Keep headings, scope conditions, nested lists, and attached safety and approval conditions with the content.
 3. **Merge with your existing rules.** Remove duplicates and resolve conflicts while preserving project requirements and safety boundaries. In mixed projects, apply the web rules only to web content and its supporting endpoints.
 4. **Confirm the rules are loaded, then try them on a task.** Use your agent's available loading diagnostics to check that the complete content is included. Cloning this repository or copying these files into an arbitrary folder does not activate them. Adjust the selection if a rule adds friction without helping your work; use project checks to enforce mechanical requirements.
@@ -52,7 +52,7 @@ When adapting these rules, distinguish guidance needed across tasks from guidanc
 - **For a project:** keep its tools, commands, conventions, and compatibility requirements in project instructions. Scope web development guidance to web projects or web-related areas of mixed projects using your agent's supported loading controls.
 - **For an occasional task:** keep specialist procedures, such as full accessibility audits or performance profiling, in a task-specific reference or skill. Load them when relevant; keep basic safeguards and checks for affected behaviour in the baseline.
 
-A conditional heading does not save context when the entire file is loaded. Do not move essential safety or approval boundaries solely into optional references.
+If the same agent also handles non-software tasks, user-level placement may load these coding rules for those tasks too. Scope headings limit when the rules apply; they do not prevent the loaded text from using context. Use conditional loading where available or project instructions if you want to avoid that overhead. Do not move essential safety or approval boundaries solely into optional references.
 
 Rules and skills can overlap; a different file type does not justify repeating the same instruction. Use relevant skills only when available and compatible with the project; otherwise consult official documentation. Using a skill does not authorise installations, upgrades, or unrelated changes.
 

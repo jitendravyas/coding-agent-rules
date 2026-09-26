@@ -1,4 +1,4 @@
-# General software-project instructions
+# Coding-agent rules for software projects
 
 ## Scope and instruction priority
 
