@@ -1,4 +1,4 @@
-# Android-specific instructions
+# Android-specific instructions (draft)
 
 Apply only to authorised native Android work and its Android platform integrations.
 
